@@ -38,7 +38,6 @@ public class PointInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
         location.setText(marker.getTitle());
         descr.setText(marker.getSnippet());
-        img.setBackgroundResource(R.drawable.dekemvriana);
 
         return v;
 

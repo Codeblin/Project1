@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Project1</string>
     <string name="title_activity_maps">Map</string>
+    <string-array name="locations">
+        <item>Ομόνοια</item>
+        <item>Σύνταγμα</item>
+        <item>Αμπελόκηποι</item>
+        <item>Μοναστηράκι</item>
+        <item>Θησείο</item>
+        <item>Πλάκα</item>
+        <item>Ψυρρή</item>
+        <item>Βικτώρια</item>
+        <item>Καισαριανή</item>
+    </string-array>
 </resources>
