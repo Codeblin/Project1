@@ -1,6 +1,8 @@
 package com.jiannapohotmail.com.project1;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,12 +12,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -78,7 +83,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             @Override
             protected void onClickConfirmed(View v, Marker marker) {
                 // Here we can perform some action triggered after clicking the button
-                Toast.makeText(MapActivity.this, marker.getTitle() + "'s button clicked!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MapActivity.this, VideoActivity.class);
+                intent.putExtra("video_resource", returnRightVideo(marker.getTitle()));
+                startActivity(intent);
             }
         };
         this.infoButton.setOnTouchListener(infoButtonListener);
@@ -106,6 +113,16 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         });
 
         setupData();
+
+        // Add polyline
+        for (int i = 0; i < positionsList.size() - 1; i++){
+            Polyline line = mGoogleMap.addPolyline(new PolylineOptions()
+                    .add(positionsList.get(i), positionsList.get(i + 1))
+                    .width(5)
+                    .color(Color.RED));
+        }
+        // Move camera to the first point
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pointModels.get(0).getPosition(),15));
     }
 
     private void setupData(){
@@ -142,6 +159,29 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         positionsList.add(new LatLng(37.98204171, 23.73178142));
         positionsList.add(new LatLng(37.98785785, 23.72691545));
         positionsList.add(new LatLng(37.98371605, 23.72901413));
+    }
+
+    private int returnRightVideo(String title){
+        if (title.equals(imgResArray[0]))
+            return R.raw.video_test;
+        else if (title.equals(imgResArray[1]))
+            return R.raw.video_test;
+        else if (title.equals(imgResArray[2]))
+            return R.raw.video_test;
+        else if (title.equals(imgResArray[3]))
+            return R.raw.video_test;
+        else if (title.equals(imgResArray[4]))
+            return R.raw.video_test;
+        else if (title.equals(imgResArray[5]))
+            return R.raw.video_test;
+        else if (title.equals(imgResArray[6]))
+            return R.raw.video_test;
+        else if (title.equals(imgResArray[7]))
+            return R.raw.video_test;
+        else if (title.equals(imgResArray[8]))
+            return R.raw.video_test;
+        else
+            return  0;
     }
 
     private int returnRightImage(String title){

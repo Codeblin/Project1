@@ -1,11 +1,10 @@
 package com.jiannapohotmail.com.project1;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.jiannapohotmail.com.project1.R;
 
 
 public class PointModel {
-    private int pointPic;
+    private int pointPic, pointVideo;
     private String pointTitle;
     private String pointDescr;
     private LatLng position;
@@ -53,6 +52,14 @@ public class PointModel {
 
     public void setPosition(LatLng position) {
         this.position = position;
+    }
+
+    public int getPointVideo() {
+        return pointVideo;
+    }
+
+    public void setPointVideo(int pointVideo) {
+        this.pointVideo = pointVideo;
     }
     // video
 

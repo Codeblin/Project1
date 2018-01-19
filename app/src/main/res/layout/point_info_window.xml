@@ -44,8 +44,10 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:text="Des to video"
+            android:textSize="10sp"
             android:layout_gravity="center"
-            android:layout_weight="0.4"/>
+            android:layout_weight="0.4"
+            android:layout_marginBottom="8dp"/>
 
     </LinearLayout>
 
