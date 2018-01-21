@@ -8,6 +8,7 @@ public class PointModel {
     private String pointTitle;
     private String pointDescr;
     private LatLng position;
+    private boolean isActive;
 
     public PointModel(int pointPic, String pointTitle, String pointDescr) {
         this.pointPic = pointPic;
@@ -15,11 +16,12 @@ public class PointModel {
         this.pointDescr = pointDescr;
     }
 
-    public PointModel(int pointPic, String pointTitle, String pointDescr, LatLng position) {
+    public PointModel(int pointPic, String pointTitle, String pointDescr, LatLng position, boolean isActive) {
         this.pointPic = pointPic;
         this.pointTitle = pointTitle;
         this.pointDescr = pointDescr;
         this.position = position;
+        this.isActive = isActive;
     }
 
     public int getPointPic() {
@@ -60,6 +62,14 @@ public class PointModel {
 
     public void setPointVideo(int pointVideo) {
         this.pointVideo = pointVideo;
+    }
+
+    public boolean IsActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
     // video
 

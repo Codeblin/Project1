@@ -2,14 +2,43 @@
     <string name="app_name">Project1</string>
     <string name="title_activity_maps">Map</string>
     <string-array name="locations">
-        <item>Ομόνοια</item>
-        <item>Σύνταγμα</item>
-        <item>Αμπελόκηποι</item>
-        <item>Μοναστηράκι</item>
-        <item>Θησείο</item>
-        <item>Πλάκα</item>
-        <item>Ψυρρή</item>
-        <item>Βικτώρια</item>
-        <item>Καισαριανή</item>
+        <item>Αφετηρία</item>
+        <item>Πατησίων και Γλάδστωνος</item>
+        <item>Θέατρο Ρέξ</item>
+        <item>Λέσχη Πανεπιστημίου</item>
+        <item>Κομμαντατούρ</item>
+        <item>Ιουλιανά 1943</item>
+        <item>Κρατητήρια Γεστάπο</item>
+        <item>Δεκεμβριανά</item>
     </string-array>
+
+    <string-array name="descriptions">
+        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
+            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+
+        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
+            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+
+        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
+            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+
+        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
+            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+
+        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
+            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+
+        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
+            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+
+        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
+            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+
+        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
+            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+    </string-array>
+    <string name="title_activity_about">AboutActivity</string>
+
+    <string name="about">ThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThis</string>
+
 </resources>
