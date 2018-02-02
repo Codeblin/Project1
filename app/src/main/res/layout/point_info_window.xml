@@ -7,7 +7,7 @@
     
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="250dp"
+        android:layout_height="350dp"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -24,11 +24,11 @@
                 android:id="@+id/location_info_window_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Suntagma"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
+                android:background="@color/colorBackgroundOpaque"
                 android:fontFamily="@font/comfortaa_regular"/>
         </RelativeLayout>
 
@@ -36,20 +36,22 @@
             android:id="@+id/descr_info_window_txt"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:text="Dekebriana"
             android:gravity="center"
-            android:layout_weight="1"
-            android:fontFamily="@font/comfortaa_regular"/>
+            android:layout_weight="1.6"
+            android:padding="4dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/comfortaa_regular" />
 
         <Button
             android:id="@+id/info_window_btn"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:text="Des to video"
-            android:textSize="10sp"
+            android:text="@string/see_video"
+            android:textSize="12sp"
             android:layout_gravity="center"
             android:layout_weight="0.4"
             android:layout_marginBottom="8dp"
+            android:padding="6dp"
             android:background="@drawable/rounded_button"
             android:fontFamily="@font/comfortaa_regular"
             android:textColor="@color/colorWhiteDark"/>

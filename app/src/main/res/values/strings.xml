@@ -3,42 +3,36 @@
     <string name="title_activity_maps">Map</string>
     <string-array name="locations">
         <item>Αφετηρία</item>
-        <item>Πατησίων και Γλάδστωνος</item>
-        <item>Θέατρο Ρέξ</item>
-        <item>Λέσχη Πανεπιστημίου</item>
-        <item>Κομμαντατούρ</item>
-        <item>Ιουλιανά 1943</item>
-        <item>Κρατητήρια Γεστάπο</item>
-        <item>Δεκεμβριανά</item>
+        <item>Ανατίναξη ΕΣΠΟ</item>
+        <item>ΕΑΜ Θεάτρου</item>
+        <item>ΕΠΟΝ Σπουδάζουσας</item>
+        <item>Κομαντατούρα</item>
+        <item>22 Ιουλίου 1943</item>
+        <item>Μέρλιν 6</item>
+        <item>Δεκεμβριανά ‘44</item>
     </string-array>
 
     <string-array name="descriptions">
-        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
-            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+        <item>Ομόνοια. Από εδώ ξεκινούν σε όλη τη διάρκεια της κατοχής έως και σήμερα συγκεντρώσεις διαμαρτυρίας. Για να μάθεις περισσότερα για τα πρώτα βήματα οργάνωσης και αντίστασης κατά των δυνάμεων κατοχής στην Αθήνα αλλά και σε ολόκληρη την Ελλάδα μπορείς να πατήσεις την ένδειξη «Δες το βίντεο»</item>
 
-        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
-            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+        <item>Πατησίων και Γλάδστωνος. Εδώ θα ακούσεις και θα δεις για ένα από τα πρώτα σαμποτάζ την περίοδο της κατοχής από την αντιστασιακή οργάνωση ΠΕΑΝ </item>
 
-        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
-            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+        <item>Θέατρο ΡΕΞ, Πανεπιστημίου 48. Η αντιστασιακή δράση των καλλιτεχνών ήταν πλούσια. Στο καμαρίνι της στο κινηματοθέατρο ΡΕΞ η Ολυμπία Παπαδούκα είχε στήσει παράνομα μικρό πολύγραφο για την εκτύπωση προκηρύξεων</item>
 
-        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
-            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+        <item>Λέσχη Πανεπιστημίου Αθηνών, Ιπποκράτους 15. Οι λέσχες των Ανώτατων Ιδρυμάτων ήταν σημεία συνάντησης των φοιτητών και ορμητήρια του αγώνα</item>
 
-        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
-            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+        <item>Ιστορικός Χώρος Μνήμης 1941–1944, Κοραή 4. Τα υπόγεια του μεγάρου μετατράπηκαν σε φυλακές, κέντρα μεταγωγών όπου αγωνιστές και κάθε λογής άνθρωποι ακόμα και 14 χρονών κρατήθηκαν από τις ναζιστικές δυνάμεις</item>
 
-        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
-            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+        <item>Πανεπιστημίου και Ομήρου. 400 χιλιάδες λαού διαδηλώνουν κατά της βουλγαρικής επέκτασης. Τα γερμανικά τανκς σκοτώνουν διαδηλωτές, ανάμεσά τους και μέλη της ΕΠΟΝ που πρωτοστάτησαν στη μάχη </item>
 
-        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
-            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+        <item>Κρατητήρια της Γκεστάπο όπου έγιναν φριχτά βασανιστήρια αγωνιστών. Το μόνο που απέμεινε είναι μια σιδερένια πόρτα που θυμίζει τις θηριωδίες των κατοχικών δυνάμεων αλλά και των ντόπιων συνεργατών τους</item>
 
-        <item>DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionD
-            escriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</item>
+        <item>Πλατεία Συντάγματος. Η Αδούλωτη Αθήνα λίγες μέρες μετά την απελευθέρωση από το γερμανικό ζυγό δίνει ξανά το αίμα των παιδιών της, αυτή τη φορά κατά της στρατιωτικής επέμβασης των Βρετανών</item>
     </string-array>
     <string name="title_activity_about">AboutActivity</string>
 
     <string name="about">ThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThis</string>
+
+    <string name="see_video">Δες το βίντεο</string>
 
 </resources>

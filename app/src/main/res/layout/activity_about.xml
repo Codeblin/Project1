@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jiannapohotmail.com.project1.AboutActivity">
+    tools:context="com.jiannapohotmail.com.project1.activities.AboutActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Resarch"
+                android:text="Title"
                 android:padding="10dp"
                 android:textColor="@color/colorAccent"
                 android:fontFamily="@font/comfortaa_bold"/>
@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Resarch"
+                android:text="Title"
                 android:padding="10dp"
                 android:textColor="@color/colorAccent"
                 android:fontFamily="@font/comfortaa_bold"/>
