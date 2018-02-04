@@ -2,6 +2,7 @@ package com.jiannapohotmail.com.project1.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -28,6 +29,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.jiannapohotmail.com.project1.data.managers.SharedPreferencesManager;
 import com.jiannapohotmail.com.project1.views.MapWrapperLayout;
 import com.jiannapohotmail.com.project1.listeners.OnInfoWindowElemTouchListener;
 import com.jiannapohotmail.com.project1.R;
@@ -46,20 +48,18 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private OnInfoWindowElemTouchListener infoButtonListener;
     // Data structures
     private ArrayList<PointModel> pointModels;
-    private ArrayList<LatLng> positionsList;
     private HashMap<String, Marker> markerHashMap;
-    // Resource arrays
-    private String[] imgResArray;
-    private String[] descrResArray;
     // Variables
     private GoogleMap mGoogleMap;
-    private int DestinationIndex = 0;
+    private int DestinationIndex;
     // User location
     private LocationManager locationManager;
     private LocationListener locationListener;
     private String provider;
     // Constants
     private final float REQUIRED_DISTANCE = 25f; // meters
+    // Managers
+    private SharedPreferencesManager sharedPreferencesManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,11 +108,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
     private void init(){
-        pointModels = new ArrayList<>();
-        positionsList = new ArrayList<>();
+        sharedPreferencesManager = new SharedPreferencesManager(this);
+        SharedPreferences sharedPreferences = getSharedPreferences(SharedPreferencesManager.SHARED_PREF_DATA, MODE_PRIVATE);
+        DestinationIndex = sharedPreferences.getInt(SharedPreferencesManager.KEY_DESTINATION_INDEX, 0);
+
+        pointModels = sharedPreferencesManager.GetListFromSharedPreferences();
         markerHashMap = new HashMap<>();
-        imgResArray = getResources().getStringArray(R.array.locations);
-        descrResArray = getResources().getStringArray(R.array.descriptions);
 
         userTrackingInit();
     }
@@ -131,18 +132,19 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             public void onLocationChanged(Location location) {
                 if (DestinationIndex < pointModels.size() - 1){
                     Location destinationLocation = new Location("currentDestination");
-                    destinationLocation.setLatitude(positionsList.get(DestinationIndex).latitude);
-                    destinationLocation.setLongitude(positionsList.get(DestinationIndex).longitude);
+                    destinationLocation.setLatitude(pointModels.get(DestinationIndex).getLatitude());
+                    destinationLocation.setLongitude(pointModels.get(DestinationIndex).getLongitude());
 
                     if (location.distanceTo(destinationLocation) < REQUIRED_DISTANCE){
-                        //pointModels.get(DestinationIndex).setActive(false);
-                        markerHashMap.get(imgResArray[DestinationIndex + 1]).setVisible(true);
+                        markerHashMap.get(pointModels.get(DestinationIndex + 1).getPointTitle()).setVisible(true);
                         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
-                                markerHashMap.get(imgResArray[DestinationIndex + 1]).getPosition(), 15);
+                                markerHashMap.get(pointModels.get(DestinationIndex + 1).getPointTitle()).getPosition(), 15);
                         mGoogleMap.animateCamera(cameraUpdate);
 
-                        // Set destination to be the next item on the location list
+                        // Set destination to be the next item on the location list and update flag for marker that is active
                         DestinationIndex++;
+                        pointModels.get(DestinationIndex).setActive(true);
+                        sharedPreferencesManager.SaveDataToSharedPreferences(pointModels, DestinationIndex);
                     }
                 }
             }
@@ -220,7 +222,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         });
 
         // Move camera to the first point
-        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pointModels.get(0).getPosition(),15));
+        LatLng location = new LatLng(pointModels.get(0).getLatitude(), pointModels.get(0).getLongitude());
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15));
 
         // Check permissions and set user Location
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
@@ -230,79 +233,56 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     }
 
     private void setupData(){
-        generatePoints();
-        fillPointData();
 
         for (PointModel point : pointModels) {
+            LatLng location = new LatLng(point.getLatitude(), point.getLongitude());
             markerHashMap.put(point.getPointTitle(), mGoogleMap.addMarker(
                     new MarkerOptions()
                             .title(point.getPointTitle())
                             .snippet(point.getPointDescr())
-                            .position(point.getPosition())
+                            .position(location)
                             .visible(point.IsActive())
             ));
         }
     }
 
-    private void fillPointData(){
-        for (int i = 0; i < positionsList.size(); i++)
-        {
-            pointModels.add(new PointModel(0,
-                    imgResArray[i],
-                    descrResArray[i],
-                    positionsList.get(i),
-                    i == 0));
-        }
-    }
-
-    private void generatePoints(){
-        positionsList.add(new LatLng(37.983759, 23.728071));
-        positionsList.add(new LatLng(37.984636, 23.729551));
-        positionsList.add(new LatLng(37.982675, 23.731091));
-        positionsList.add(new LatLng(37.981897, 23.733619));
-        positionsList.add(new LatLng(37.979796, 23.732544));
-        positionsList.add(new LatLng(37.978673, 23.734347));
-        positionsList.add(new LatLng(37.976599, 23.738636));
-        positionsList.add(new LatLng(37.975651, 23.734001));
-    }
-
     private int findRightVideo(String title){
-        if (title.equals(imgResArray[0]))
+        if (title.equals(pointModels.get(0).getPointTitle()))
             return R.raw.diplomatiki_afetiria_teliko_compressed;
-        else if (title.equals(imgResArray[1]))
+        else if (title.equals(pointModels.get(1).getPointTitle()))
             return R.raw.diplomatiki_stasi_2_espo_compressed;
-        else if (title.equals(imgResArray[2]))
+        else if (title.equals(pointModels.get(2).getPointTitle()))
             return R.raw.eam_theatrou_2_compressed;
-        else if (title.equals(imgResArray[3]))
+        else if (title.equals(pointModels.get(3).getPointTitle()))
             return R.raw.epon_spoudazousa_compressed;
-        else if (title.equals(imgResArray[4]))
+        else if (title.equals(pointModels.get(4).getPointTitle()))
             return R.raw.video_test;
-        else if (title.equals(imgResArray[5]))
+        else if (title.equals(pointModels.get(5).getPointTitle()))
             return R.raw.video_test;
-        else if (title.equals(imgResArray[6]))
+        else if (title.equals(pointModels.get(6).getPointTitle()))
             return R.raw.v7;
-        else if (title.equals(imgResArray[7]))
+        else if (title.equals(pointModels.get(7).getPointTitle()))
             return R.raw.video_test;
         else
             return  0;
     }
 
     private int findRightImage(String title){
-        if (title.equals(imgResArray[0]))
+        if (title.equals(pointModels.get(0).getPointTitle()))
             return R.drawable.i01;
-        else if (title.equals(imgResArray[1]))
+        else if (title.equals(pointModels.get(1).getPointTitle()))
             return R.drawable.i02;
-        else if (title.equals(imgResArray[2]))
+        else if (title.equals(pointModels.get(2).getPointTitle()))
             return R.drawable.i03;
-        else if (title.equals(imgResArray[3]))
+        else if (title.equals(pointModels.get(3).getPointTitle()))
             return R.drawable.i04;
-        else if (title.equals(imgResArray[4]))
+        else if (title.equals(pointModels.get(4).getPointTitle()))
             return R.drawable.i05;
-        else if (title.equals(imgResArray[5]))
+        else if (title.equals(pointModels.get(5).getPointTitle()))
             return R.drawable.i06;
-        else if (title.equals(imgResArray[6]))
+        else if (title.equals(pointModels.get(6).getPointTitle()))
             return R.drawable.i07;
-        else if (title.equals(imgResArray[7]))
+        else if (title.equals(pointModels.get(7).getPointTitle()))
             return R.drawable.i08;
         else
             return  0;

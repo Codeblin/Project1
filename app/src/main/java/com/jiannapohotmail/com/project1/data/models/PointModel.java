@@ -4,10 +4,11 @@ import com.google.android.gms.maps.model.LatLng;
 
 
 public class PointModel {
+    private int id;
     private int pointPic, pointVideo;
     private String pointTitle;
     private String pointDescr;
-    private LatLng position;
+    private double latitude, longitude;
     private boolean isActive;
 
     public PointModel(int pointPic, String pointTitle, String pointDescr) {
@@ -16,11 +17,12 @@ public class PointModel {
         this.pointDescr = pointDescr;
     }
 
-    public PointModel(int pointPic, String pointTitle, String pointDescr, LatLng position, boolean isActive) {
+    public PointModel(int pointPic, String pointTitle, String pointDescr, double latitude, double longitude, boolean isActive) {
         this.pointPic = pointPic;
         this.pointTitle = pointTitle;
         this.pointDescr = pointDescr;
-        this.position = position;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.isActive = isActive;
     }
 
@@ -48,14 +50,6 @@ public class PointModel {
         this.pointDescr = pointDescr;
     }
 
-    public LatLng getPosition() {
-        return position;
-    }
-
-    public void setPosition(LatLng position) {
-        this.position = position;
-    }
-
     public int getPointVideo() {
         return pointVideo;
     }
@@ -70,6 +64,30 @@ public class PointModel {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
     // video
 

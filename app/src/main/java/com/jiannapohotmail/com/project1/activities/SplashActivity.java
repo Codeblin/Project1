@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.jiannapohotmail.com.project1.R;
+import com.jiannapohotmail.com.project1.data.managers.SharedPreferencesManager;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -16,6 +17,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        SharedPreferencesManager sharedPreferencesManager = new SharedPreferencesManager(getApplicationContext());
         SharedPreferences sharedPreferences = getSharedPreferences("user_identification", MODE_PRIVATE);
         boolean isFirstTime = sharedPreferences.getBoolean("isFirstTime", true);
 
@@ -23,6 +25,8 @@ public class SplashActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("isFirstTime", false);
             editor.apply();
+
+            sharedPreferencesManager.InitialJsonMaping();
 
             startMapsActivity(1, HelpActivity.class);
         }else {
