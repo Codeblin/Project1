@@ -62,6 +62,9 @@
             android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".activities.MapActivity"
             android:screenOrientation="portrait"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="6b3c83c9b86f87f6e190094280c11d2787169beb" />
     </application>
 
 </manifest>
