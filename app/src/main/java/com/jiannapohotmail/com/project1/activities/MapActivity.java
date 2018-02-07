@@ -26,6 +26,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -191,7 +192,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         {
             @Override
             protected void onClickConfirmed(View v, Marker marker) {
-                // Get video resource of the clicked button and start activity with it
+                //Get video resource of the clicked button and start activity with it
                 Intent intent = new Intent(MapActivity.this, VideoActivity.class);
                 intent.putExtra("video_resource", findRightVideo(marker.getTitle()));
                 startActivity(intent);
@@ -256,13 +257,13 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         else if (title.equals(pointModels.get(3).getPointTitle()))
             return R.raw.epon_spoudazousa_compressed;
         else if (title.equals(pointModels.get(4).getPointTitle()))
-            return R.raw.video_test;
+            return R.raw.v5korai;
         else if (title.equals(pointModels.get(5).getPointTitle()))
-            return R.raw.video_test;
+            return R.raw.v6omirou;
         else if (title.equals(pointModels.get(6).getPointTitle()))
-            return R.raw.v7;
+            return R.raw.v7merlin;
         else if (title.equals(pointModels.get(7).getPointTitle()))
-            return R.raw.video_test;
+            return R.raw.v8syntagma;
         else
             return  0;
     }

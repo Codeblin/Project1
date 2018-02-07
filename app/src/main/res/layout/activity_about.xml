@@ -19,31 +19,14 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/ic_info_24dp"
+                android:src="@mipmap/ic_launcher"
                 android:layout_margin="20dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Title"
-                android:padding="10dp"
-                android:textColor="@color/colorAccent"
-                android:fontFamily="@font/comfortaa_bold"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/about"
-                android:padding="30dp"
-                android:fontFamily="@font/comfortaa_regular"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Title"
+                android:text="@string/title_about"
                 android:padding="10dp"
                 android:textColor="@color/colorAccent"
                 android:fontFamily="@font/comfortaa_bold"/>

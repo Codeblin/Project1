@@ -7,9 +7,10 @@
     tools:context="com.jiannapohotmail.com.project1.activities.HelpActivity">
 
     <TextView
+        android:id="@+id/txt_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Instructions"
+        android:text="@string/title_help"
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
@@ -17,25 +18,27 @@
         android:textSize="23sp"
         android:fontFamily="@font/comfortaa_thin"/>
 
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/help"
-        android:layout_centerInParent="true"
-        android:scaleType="centerCrop"/>
-
     <Button
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="GotoMap"
-        android:text="start"
+        android:text="Έναρξη"
         android:background="@drawable/rounded_button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:textColor="@color/colorWhiteDark"
         android:fontFamily="@font/comfortaa_bold"/>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/help"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/txt_title"
+        android:paddingBottom="40dp"
+        android:scaleType="centerCrop"/>
 
 </RelativeLayout>

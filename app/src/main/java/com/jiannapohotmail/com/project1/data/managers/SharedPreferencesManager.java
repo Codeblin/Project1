@@ -19,7 +19,6 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SharedPreferencesManager {
 
@@ -98,13 +97,13 @@ public class SharedPreferencesManager {
         else if (title.equals(pointModels.get(3).getPointTitle()))
             return R.raw.epon_spoudazousa_compressed;
         else if (title.equals(pointModels.get(4).getPointTitle()))
-            return R.raw.video_test;
+            return R.raw.v5korai;
         else if (title.equals(pointModels.get(5).getPointTitle()))
-            return R.raw.video_test;
+            return R.raw.v6omirou;
         else if (title.equals(pointModels.get(6).getPointTitle()))
-            return R.raw.v7;
+            return R.raw.v7merlin;
         else if (title.equals(pointModels.get(7).getPointTitle()))
-            return R.raw.video_test;
+            return R.raw.v8syntagma;
         else
             return  0;
     }

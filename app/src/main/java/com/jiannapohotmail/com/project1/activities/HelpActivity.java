@@ -24,7 +24,7 @@ public class HelpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_help);
 
         Button btn = findViewById(R.id.btnNext);
-        mp = MediaPlayer.create(getApplicationContext(), R.raw.voice);
+        mp = MediaPlayer.create(this, R.raw.voice);
         mp.start();
 
         btn.setVisibility(getIntent().getIntExtra("visibility_flag", 0));

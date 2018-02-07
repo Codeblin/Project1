@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">Project1</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="app_name">Δρόμοι Αντίστασης</string>
+    <string name="title_help">Οδηγίες</string>
+    <string name="title_about">Πληροφορίες</string>
+    <string name="title_video">Βίντεο</string>
+    <string name="title_activity_maps">Χάρτης</string>
     <string-array name="locations">
         <item>Αφετηρία</item>
         <item>Ανατίναξη ΕΣΠΟ</item>
@@ -31,7 +34,7 @@
     </string-array>
     <string name="title_activity_about">AboutActivity</string>
 
-    <string name="about">ThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThis</string>
+    <string name="about">Η παρούσα εφαρμογή δημιουργήθηκε στα πλαίσια της διπλωματικής εργασίας του ΠΜΣ Πολιτισμική Πληροφορική και Επικοινωνία, Πανεπιστήμιο Αιγαίου, κατά το χειμερινό εξάμηνο 2017–2018.  Η εργασία «Δρόμοι Αντίστασης στις γειτονιές της Αθήνας 1941–1944 εκπονήθηκε από την Ποθητού Ιωάννα και δεν προορίζεται για εμπορική χρήση</string>
 
     <string name="see_video">Δες το βίντεο</string>
 
